@@ -1,0 +1,21 @@
+div {
+  width: 100%;
+  margin: 1rem 0;
+
+  label {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    color: #065f46;
+
+    input {
+      height: 36px;
+      padding: 0 .5rem;
+      margin-top: .2rem;
+
+      &:focus {
+        outline: 2px solid #10b981;
+      }
+    }
+  }
+}

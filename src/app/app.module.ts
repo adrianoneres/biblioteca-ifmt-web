@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { TitleComponent } from './title/title.component';
+import { ButtonComponent } from './button/button.component';
+import { InputTextComponent } from './input-text/input-text.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -10,7 +13,10 @@ import { TitleComponent } from './title/title.component';
   ],
   imports: [
     BrowserModule,
-    TitleComponent
+    TitleComponent,
+    ButtonComponent,
+    FormsModule,
+    InputTextComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

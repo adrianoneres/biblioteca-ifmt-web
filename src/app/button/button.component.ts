@@ -2,13 +2,12 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-title',
+  selector: 'app-button',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './title.component.html',
-  styleUrls: ['./title.component.scss']
+  templateUrl: './button.component.html',
+  styleUrls: ['./button.component.scss']
 })
-export class TitleComponent {
+export class ButtonComponent {
   @Input() valor!: string;
-  @Input() subtitulo: boolean = false;
 }
