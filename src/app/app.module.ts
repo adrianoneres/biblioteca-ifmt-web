@@ -6,10 +6,12 @@ import { TitleComponent } from './title/title.component';
 import { ButtonComponent } from './button/button.component';
 import { InputTextComponent } from './input-text/input-text.component';
 import { FormsModule } from '@angular/forms';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
