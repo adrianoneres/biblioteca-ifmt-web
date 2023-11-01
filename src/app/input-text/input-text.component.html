@@ -1,6 +1,6 @@
 <div>
   <label>
     {{ label }}
-    <input [type]="tipo" [value]="valor" />
+    <input [type]="tipo" [value]="valor" (keyup)="changeValor($event)" />
   </label>
 </div>

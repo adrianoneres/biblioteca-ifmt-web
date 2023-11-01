@@ -1,6 +1,9 @@
 <app-title valor="Entrar"/>
 
-<app-input-text label="Nome de usuário" [valor]="nomeUsuario" />
+<app-input-text label="Nome de usuário" [(valor)]="nomeUsuario" />
 <app-input-text label="Senha" tipo="password" />
 
 <app-button valor="Teste" />
+
+<br>
+{{ nomeUsuario }}
