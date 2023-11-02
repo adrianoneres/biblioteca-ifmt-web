@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BackendService } from '../backend.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -8,4 +9,18 @@ import { Component } from '@angular/core';
 export class SignInComponent {
   nomeUsuario = '';
   senha = '';
+
+  constructor(private backendService: BackendService) {
+
+  }
+
+  enviarLogin() {
+    this.backendService
+      .login(this.nomeUsuario, this.senha)
+      .then(resposta => {
+        if (resposta.status == 200) {
+          localStorage.setItem('token', resposta.data.accessToken);
+        }
+      });
+  }
 }

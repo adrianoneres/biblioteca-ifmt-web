@@ -5,7 +5,7 @@
   <app-input-text label="Senha" tipo="password" [(valor)]="senha" />
 
   <footer>
-    <app-button valor="Entrar" />
+    <app-button valor="Entrar" (click)="enviarLogin()" />
     <a routerLink="/sign-up">Criar conta</a>
   </footer>
 </main>
