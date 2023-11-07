@@ -9,25 +9,35 @@ import { FormsModule } from '@angular/forms';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ToastNoAnimationModule } from 'ngx-toastr';
+import { LivroListarComponent } from './livro-listar/livro-listar.component';
+import { LivroCadastrarComponent } from './livro-cadastrar/livro-cadastrar.component';
+import { TemplateAutenticadoComponent } from './template-autenticado/template-autenticado.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
-  { path: 'sign-up', component: SignUpComponent }
+  { path: 'sign-up', component: SignUpComponent },
+  { path: 'livros', component: LivroListarComponent },
+  { path: 'livros/cadastrar', component: LivroCadastrarComponent }
 ];
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    LivroListarComponent,
+    LivroCadastrarComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
+    ToastNoAnimationModule.forRoot(),
     BrowserModule,
     TitleComponent,
     ButtonComponent,
     FormsModule,
-    InputTextComponent
+    InputTextComponent,
+    TemplateAutenticadoComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

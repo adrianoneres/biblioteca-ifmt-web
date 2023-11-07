@@ -1,0 +1,48 @@
+main {
+  width: 100%;
+
+  header {
+    background-color: #134e4a;
+
+    nav {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: .5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h1 {
+        color: #ffffff;
+        font-size: 1.2rem;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+
+        li {
+          a {
+            cursor: pointer;
+            color: #ffffff;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
+          & + li {
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    max-width: 760px;
+    margin: 0 auto;
+    padding-top: 1rem;
+  }
+}
