@@ -13,4 +13,19 @@ export class BackendService {
     const body = { nomeUsuario, senha };
     return this.api.post('/seguranca/login', body);
   }
+
+  listarLivros() {
+    // 1. Recuperar o token do Local Storage:
+    const token = localStorage.getItem('token');
+
+    // 2. Criar o objeto de configuraçõs da requisição, com os cabeçalho Authorization:
+    const config = {
+      headers: {
+        Authorization: 'Bearer ' + token,
+      }
+    };
+
+    // 3. Enviar a requisição e retornar a resposta:
+    return this.api.get('/livros', config);
+  }
 }
