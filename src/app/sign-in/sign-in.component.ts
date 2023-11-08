@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BackendService } from '../backend.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -13,9 +14,18 @@ export class SignInComponent {
 
   constructor(
     private backendService: BackendService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) {
 
+  }
+
+  ngOnInit() {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      this.router.navigate(['/livros']);
+    }
   }
 
   enviarLogin() {
@@ -24,6 +34,8 @@ export class SignInComponent {
       .then(resposta => { // se a requisição obtiver sucesso
         if (resposta.status == 200) {
           localStorage.setItem('token', resposta.data.accessToken);
+          // redirecionar para a página de listagem de livros:
+          this.router.navigate(['/livros']);
         }
       })
       // se tiver erro:

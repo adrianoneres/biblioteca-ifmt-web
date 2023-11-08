@@ -1,3 +1,21 @@
 <app-template-autenticado>
-  <p>livro-listar works!</p>
+  <app-title valor="Livros"></app-title>
+  <section>
+    <table>
+      <thead>
+        <tr>
+          <th>Titulo</th>
+          <th>Autor</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let livro of livros">
+          <td>{{ livro.titulo }}</td>
+          <td>{{ livro.autor }}</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 </app-template-autenticado>

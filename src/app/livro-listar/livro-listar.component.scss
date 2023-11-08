@@ -1,0 +1,31 @@
+table {
+  width: 100%;
+  border: 1px solid #111827;
+  border-collapse: collapse;
+
+  thead {
+    th {
+      background-color: #059669;
+      color: #ffff;
+      font-weight: bold;
+      padding: .3rem;
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        border: 1px solid #111827;
+        padding: .3rem;
+
+        &:nth-child(1) {
+          font-weight: bold;
+        }
+      }
+
+      &:hover {
+        background-color: #d1fae5;
+      }
+    }
+  }
+}
