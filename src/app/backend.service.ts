@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
+import { Livro } from './livro';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,20 @@ export class BackendService {
 
     // 3. Enviar a requisição e retornar a resposta:
     return this.api.get('/livros', config);
+  }
+
+  criarLivro(livro: Livro) {
+    // 1. Recuperar o token do Local Storage:
+    const token = localStorage.getItem('token');
+
+    // 2. Criar o objeto de configuraçõs da requisição, com os cabeçalho Authorization:
+    const config = {
+      headers: {
+        Authorization: 'Bearer ' + token,
+      }
+    };
+
+    // 3. Enviar a requisição e retornar a resposta:
+    return this.api.post('/livros', livro, config);
   }
 }
