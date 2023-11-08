@@ -1,3 +1,10 @@
 <app-template-autenticado>
-  <p>livro-cadastrar works!</p>
+  <app-title valor="Cadastrar livro"/>
+
+  <app-input-text label="Titulo" [(valor)]="livro.titulo" />
+  <app-input-text label="Autor" [(valor)]="livro.autor" />
+
+  <footer>
+    <app-button valor="Salvar" />
+  </footer>
 </app-template-autenticado>
